@@ -3,87 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nageeb | Premium Web Design in Egypt</title>
-  <meta name="description" content="Nageeb helps SMEs in Egypt launch modern, high-converting websites in Arabic and English." />
-  <meta property="og:title" content="Nageeb | Web Design & Development" />
-  <meta property="og:description" content="Professional websites for SMEs in Egypt." />
+  <title>Nageeb System™ | AI Website Agency OS</title>
+  <meta name="description" content="Nageeb System™ is a complete AI operating system for building premium websites with strategy, execution, and deployment guidance." />
+  <meta property="og:title" content="Nageeb System™" />
+  <meta property="og:description" content="Turn ChatGPT into a full website agency with a premium AI system." />
   <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    :root {
+      --bg: #061529;
+      --bg-soft: #0a2540;
+      --card: rgba(16, 41, 69, 0.75);
+      --text: #e6edf7;
+      --muted: #9eb3cc;
+      --accent: #2563eb;
+      --accent-2: #22d3ee;
+      --border: rgba(158, 179, 204, 0.22);
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.18), transparent 45%),
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.18), transparent 40%),
+        linear-gradient(165deg, var(--bg) 0%, var(--bg-soft) 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+      padding: 64px 0 72px;
+    }
+
+    .hero {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(18, 47, 78, 0.78), rgba(9, 25, 42, 0.82));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 4vw, 52px);
+      backdrop-filter: blur(4px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 999px;
+      color: #d6e6ff;
+      font-size: 0.84rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.14;
+      max-width: 14ch;
+    }
+
+    .hero p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      max-width: 58ch;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      background: linear-gradient(120deg, var(--accent), #4f46e5);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 13px 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .grid {
+      margin-top: 26px;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .audience {
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .footer-cta {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-cta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div data-shell="top"></div>
-  <div data-shell="header"></div>
-
-  <main id="main">
+  <main class="container">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Lead-Focused Websites</span>
-          <h1>Build a website that makes your business look trusted before the first call.</h1>
-          <p>Nageeb designs and develops premium websites for small and medium businesses in Egypt, combining strategy, UX, bilingual execution, and clear conversion paths.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="request.html">Submit Request</a>
-            <a class="btn btn-secondary" href="portfolio.html">See Portfolio</a>
-          </div>
-          <div class="stat-grid">
-            <article class="stat"><strong>Arabic + English</strong><span>RTL & LTR native support.</span></article>
-            <article class="stat"><strong>Fast builds</strong><span>Launch-ready in weeks, not months.</span></article>
-            <article class="stat"><strong>Conversion-first</strong><span>Every page pushes toward enquiry.</span></article>
-          </div>
-        </div>
-        <aside class="card hero-panel">
-          <h2>What you get</h2>
+      <span class="badge">Nageeb System™</span>
+      <h1>Turn ChatGPT Into a Full Website Agency</h1>
+      <p>
+        Nageeb System™ is a complete AI operating system for building premium websites.
+        Get a structured framework to go from strategy to polished deployment-ready execution.
+      </p>
+
+      <div class="btn-row">
+        <a href="https://YOURNAME.gumroad.com/l/nageeb-system" class="btn">Get Instant Access</a>
+        <a href="#offer" class="btn secondary">Explore Everything Included</a>
+      </div>
+
+      <div id="offer" class="grid">
+        <article class="card">
+          <h2>What You Get</h2>
           <ul>
-            <li>Modern service website</li>
-            <li>Clear offer positioning</li>
-            <li>WhatsApp + request funnel</li>
-            <li>SEO-ready technical setup</li>
-            <li>Analytics event tracking plan</li>
+            <li>Full AI System</li>
+            <li>Website Strategy Engine</li>
+            <li>Execution Framework</li>
+            <li>Deployment Guide</li>
           </ul>
-        </aside>
-      </div>
-    </section>
+        </article>
 
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Core Services</span>
-        <h2 class="section-title">Built for commercial and service businesses that need outcomes, not just “nice design”.</h2>
-        <div class="grid-3">
-          <article class="card feature-card"><div class="icon-badge">01</div><h3>Web Strategy</h3><p>Positioning, messaging, and page architecture to remove confusion and increase lead confidence.</p></article>
-          <article class="card feature-card"><div class="icon-badge">02</div><h3>Design + Development</h3><p>Responsive bilingual website built for speed, accessibility, and easy maintenance.</p></article>
-          <article class="card feature-card"><div class="icon-badge">03</div><h3>Growth Assets</h3><p>Portfolio, testimonials, and blog setup to improve trust and support digital campaigns.</p></article>
-        </div>
-      </div>
-    </section>
+        <article class="card">
+          <h2>Bonuses</h2>
+          <ul>
+            <li>Prompt Pack</li>
+            <li>Templates</li>
+            <li>Client Scripts</li>
+          </ul>
+        </article>
 
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">How It Works</span>
-        <h2 class="section-title">A clear 4-step process from brief to launch.</h2>
-        <div class="process-list">
-          <article class="card process-step"><h3>Discovery</h3><p>Business goals, services, audience objections.</p></article>
-          <article class="card process-step"><h3>Blueprint</h3><p>Sitemap, content structure, and conversion flow.</p></article>
-          <article class="card process-step"><h3>Build</h3><p>Design and development with QA and SEO basics.</p></article>
-          <article class="card process-step"><h3>Launch</h3><p>Deploy to public URL, analytics, and handover.</p></article>
-        </div>
+        <article class="card">
+          <h2>Who Is This For</h2>
+          <p class="audience">Freelancers, agencies, and anyone who wants to build websites using AI.</p>
+        </article>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container cta-band card">
-        <div>
-          <h2 style="margin:0">Ready to market your services with confidence?</h2>
-          <p class="section-copy">Send your project request and get a practical website plan with timeline and scope.</p>
-        </div>
-        <a class="btn btn-primary" href="request.html">Submit Request</a>
+      <div class="footer-cta">
+        <p>Replace <strong>YOURNAME</strong> in the Gumroad link before deployment.</p>
+        <a href="https://YOURNAME.gumroad.com/l/nageeb-system" class="btn">Buy Now</a>
       </div>
     </section>
   </main>
-
-  <a class="whatsapp-float" href="https://wa.me/201023968999" aria-label="Chat on WhatsApp" target="_blank" rel="noreferrer">✆</a>
-  <div data-shell="footer"></div>
-  <script src="assets/js/content.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>

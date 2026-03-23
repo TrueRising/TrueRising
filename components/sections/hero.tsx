@@ -15,11 +15,11 @@ export const Hero = ({ locale, content }: { locale: Locale; content: { headline:
           <h1 className="max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">{content.headline}</h1>
           <p className="mt-6 max-w-3xl text-lg text-textSecondary">{content.subheadline}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={`/${locale}/start-project`} className="" >
-              <span onClick={() => trackEvent('hero_primary_cta_click', { locale })}>{content.primaryCta}</span>
+            <Button href={`/${locale}/start-project`} onClick={() => trackEvent('hero_primary_cta_click', { locale })}>
+              {content.primaryCta}
             </Button>
-            <Button href={`/${locale}/work`} variant="ghost">
-              <span onClick={() => trackEvent('hero_secondary_cta_click', { locale })}>{content.secondaryCta}</span>
+            <Button href={`/${locale}/work`} variant="ghost" onClick={() => trackEvent('hero_secondary_cta_click', { locale })}>
+              {content.secondaryCta}
             </Button>
           </div>
         </motion.div>

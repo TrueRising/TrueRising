@@ -7,7 +7,7 @@ const alexandria = Alexandria({ subsets: ['arabic'], variable: '--font-alexandri
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html lang="ar" dir="rtl">
       <body className={`${manrope.variable} ${alexandria.variable} bg-backgroundPrimary text-textPrimary antialiased`}>
         {children}
       </body>

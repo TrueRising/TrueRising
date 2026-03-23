@@ -3,7 +3,19 @@ import { Container } from '@/components/ui/container';
 import { SectionShell } from '@/components/ui/section-shell';
 import { getStartProject } from '@/content';
 import { isLocale } from '@/lib/i18n/locale-utils';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return buildPageMetadata({
+    locale,
+    path: '/start-project',
+    title: locale === 'ar' ? 'ابدأ مشروعك | NAGEEB' : 'Start Project | NAGEEB',
+    description: locale === 'ar' ? 'أرسل تفاصيل مشروعك لفريق NAGEEB لتحصل على خطة تنفيذ واضحة.' : 'Submit your project brief and receive a focused execution plan from NAGEEB.'
+  });
+}
 
 export default async function StartProjectPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

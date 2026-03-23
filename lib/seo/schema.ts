@@ -14,3 +14,14 @@ export const breadcrumbSchema = (items: Array<{ name: string; item: string }>) =
   '@type': 'BreadcrumbList',
   itemListElement: items.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: item.item }))
 });
+
+
+export const faqSchema = (questions: Array<{ q: string; a: string }>) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: questions.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a }
+  }))
+});

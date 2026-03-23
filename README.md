@@ -1,42 +1,42 @@
-# Nageeb Website Delivery Package
+# Nageeb Website (Next.js)
 
-Production-ready static website for **Nageeb** (web design + development services), targeting SMEs in Egypt.
+Production-ready bilingual website for **Nageeb** with Arabic-first routing and executive-luxury UI.
 
 ## Stack
-- HTML/CSS/Vanilla JS (fast, low-maintenance)
-- Decap CMS config for blog/settings editing
-- Netlify-ready deploy configuration
+- Next.js App Router + TypeScript
+- Tailwind CSS
+- Framer Motion (subtle motion)
+- Locale-prefixed routing (`/ar`, `/en`)
 
-## Local preview
+## Run locally
 ```bash
-python3 -m http.server 8080
-# open http://localhost:8080/docs/
+npm install
+npm run dev
 ```
 
-## Project structure
-- `docs/*.html` → website pages
-- `docs/assets/css/styles.css` → global styles
-- `docs/assets/js/content.js` → editable nav/language/blog seed content
-- `docs/assets/js/main.js` → shell rendering (header/footer/lang toggle)
-- `docs/admin/*` → Decap CMS admin setup
-- `docs/content/*` → CMS-managed content files
-- `netlify.toml` → deploy and security headers
+## Build checks
+```bash
+npm run lint
+npm run build
+```
 
-## Edit content quickly
-1. Update text sections directly in page HTML files.
-2. Update nav labels/announcement text in `docs/assets/js/content.js`.
-3. Update contact info in:
-   - `docs/contact.html`
-   - `docs/request.html`
-   - `docs/content/settings/contact.json`
+## Environment variables
+Create `.env.local` as needed:
 
-## Netlify deployment
-- Build command: *(none)*
-- Publish directory: `docs`
-- Forms: enabled via `data-netlify="true"` attributes
-- CMS: requires Netlify Identity + Git Gateway to be enabled
+```bash
+GOOGLE_SHEETS_WEBHOOK_URL=
+RESEND_API_KEY=
+CONTACT_TO_EMAIL=anageeb@gmail.com
+```
 
-## Notes
-- Includes floating WhatsApp button on all pages.
-- Includes request forms and contact form with Netlify form handling.
-- Includes bilingual toggle (English/Arabic, with RTL support).
+If integrations are not configured, form submissions return an honest fallback response and the UI guides users to WhatsApp/email.
+
+## Key routes
+- `/ar` (default)
+- `/en`
+- `/{locale}/services`, `/{locale}/work`, `/{locale}/process`, `/{locale}/about`, `/{locale}/insights`, `/{locale}/contact`, `/{locale}/start-project`
+
+## SEO
+- Canonicals + localized OG metadata per page
+- `sitemap.xml` + `robots.txt`
+- Organization + FAQ JSON-LD on the homepage

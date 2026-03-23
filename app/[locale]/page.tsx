@@ -9,7 +9,7 @@ import { TrustRibbon } from '@/components/sections/trust-ribbon';
 import { WhyNageeb } from '@/components/sections/why-nageeb';
 import { getFaq, getHomeContent, getServices, getWork } from '@/content';
 import { buildPageMetadata } from '@/lib/seo/metadata';
-import { organizationSchema } from '@/lib/seo/schema';
+import { faqSchema, organizationSchema } from '@/lib/seo/schema';
 import { isLocale } from '@/lib/i18n/locale-utils';
 import { notFound } from 'next/navigation';
 
@@ -23,6 +23,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const home = getHomeContent(locale);
+  const faqItems = getFaq(locale);
   return (
     <>
       <Hero locale={locale} content={home.hero} />
@@ -32,9 +33,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <SelectedWork locale={locale} heading={home.selectedWorkHeading} work={getWork(locale)} />
       <ProcessSteps heading={home.processHeading} steps={locale === 'ar' ? ['فهم النشاط', 'تخطيط الهيكل وتجربة المستخدم', 'التصميم البصري', 'التطوير', 'المراجعة والإطلاق'] : ['Discovery', 'Structure & UX', 'Visual Design', 'Development', 'Review & Launch']} />
       <Industries heading={home.industriesHeading} industries={home.industries} />
-      <FAQ items={getFaq(locale)} />
+      <FAQ locale={locale} items={faqItems} />
       <FinalCTA locale={locale} title={home.finalCta.title} body={home.finalCta.body} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems)) }} />
     </>
   );
 }

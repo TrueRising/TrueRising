@@ -4,7 +4,19 @@ import { Container } from '@/components/ui/container';
 import { SectionShell } from '@/components/ui/section-shell';
 import { getWork } from '@/content';
 import { isLocale } from '@/lib/i18n/locale-utils';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return buildPageMetadata({
+    locale,
+    path: '/work',
+    title: locale === 'ar' ? 'الأعمال | NAGEEB' : 'Work | NAGEEB',
+    description: locale === 'ar' ? 'نماذج أعمال رقمية مختارة تعكس مستوى التنفيذ الاحترافي لدى NAGEEB.' : 'Curated case work that reflects NAGEEB premium web execution.'
+  });
+}
 
 export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

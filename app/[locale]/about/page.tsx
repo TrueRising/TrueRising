@@ -2,7 +2,19 @@ import { Container } from '@/components/ui/container';
 import { SectionShell } from '@/components/ui/section-shell';
 import { getAbout } from '@/content';
 import { isLocale } from '@/lib/i18n/locale-utils';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return buildPageMetadata({
+    locale,
+    path: '/about',
+    title: locale === 'ar' ? 'من نحن | NAGEEB' : 'About | NAGEEB',
+    description: locale === 'ar' ? 'تعرّف على معايير NAGEEB ونهج التنفيذ الاحترافي للمواقع التجارية في مصر.' : 'Learn about NAGEEB standards and execution approach for serious businesses in Egypt.'
+  });
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

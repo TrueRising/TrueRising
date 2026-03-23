@@ -4,7 +4,19 @@ import { Container } from '@/components/ui/container';
 import { SectionShell } from '@/components/ui/section-shell';
 import { getInsights } from '@/content';
 import { isLocale } from '@/lib/i18n/locale-utils';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return buildPageMetadata({
+    locale,
+    path: '/insights',
+    title: locale === 'ar' ? 'المقالات والرؤى | NAGEEB' : 'Insights | NAGEEB',
+    description: locale === 'ar' ? 'محتوى عملي للشركات حول تصميم وتطوير المواقع والتحسين الرقمي.' : 'Practical insights for businesses on web design, development, and digital performance.'
+  });
+}
 
 export default async function InsightsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

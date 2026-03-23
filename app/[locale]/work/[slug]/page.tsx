@@ -3,7 +3,21 @@ import { Container } from '@/components/ui/container';
 import { SectionShell } from '@/components/ui/section-shell';
 import { getWork } from '@/content';
 import { isLocale } from '@/lib/i18n/locale-utils';
+import { buildPageMetadata } from '@/lib/seo/metadata';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  if (!isLocale(locale)) return {};
+  const item = getWork(locale).find((entry) => entry.slug === slug);
+  if (!item) return {};
+  return buildPageMetadata({
+    locale,
+    path: `/work/${slug}`,
+    title: `${item.title} | NAGEEB`,
+    description: item.excerpt
+  });
+}
 
 export default async function WorkDetail({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;

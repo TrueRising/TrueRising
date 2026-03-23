@@ -1,0 +1,2 @@
+import type { ServiceEntry } from '../types';
+export const maintenanceOptimizationAr: ServiceEntry = { slug:'maintenance-optimization', title:'الصيانة والتحسين', summary:'تطوير مستمر للسرعة والوضوح والاستقرار.', overview:'نحافظ على جودة الموقع بعد الإطلاق عبر تحسينات تقنية وتجريبية مستمرة.', problems:['تراجع الأداء بمرور الوقت','أخطاء غير معالجة','ثبات التجربة دون تطوير'], deliverables:['فحوصات دورية','تحديثات أداء واستقرار','تحسينات UX تدريجية'], why:['عقلية تشغيل احترافية','تقارير واضحة','استمرارية جودة الواجهة'] };

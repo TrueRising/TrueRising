@@ -1,11 +1,18 @@
 export const homeEn = {
   hero: {
+    eyebrow: 'Obsidian Systems for Premium Brands',
     headline:
-      'Premium web design and development for Egyptian businesses that want a stronger digital presence.',
+      'The flagship website system engineered to compound trust, pipeline velocity, and enterprise authority.',
     subheadline:
-      'NAGEEB creates modern, high-performance websites that elevate brand credibility, improve user experience, and support real business growth.',
-    primaryCta: 'Start Your Project',
-    secondaryCta: 'View Our Work'
+      'NAGEEB architects cinematic, conversion-critical digital platforms that position serious companies ahead of slower competitors.',
+    primaryCta: 'Book Strategy Sprint',
+    secondaryCta: 'Review Case Evidence',
+    kpis: [
+      { value: '+42%', label: 'Qualified inquiry growth in 90 days' },
+      { value: '<500ms', label: 'Target first contentful paint on edge' },
+      { value: '4-Week', label: 'Executive launch cycle for flagship sites' }
+    ],
+    proofLine: 'Engineered with investor-grade clarity across narrative, experience, and technical performance.'
   },
   trustRibbon: [
     'Built for enterprise, commercial, and service brands',

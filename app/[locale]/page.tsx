@@ -16,7 +16,7 @@ import { notFound } from 'next/navigation';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return buildPageMetadata({ locale, path: '', title: locale === 'ar' ? 'NAGEEB | تصميم وتطوير مواقع احترافية في مصر' : 'NAGEEB | Premium Web Design & Development in Egypt', description: locale === 'ar' ? 'NAGEEB شريك رقمي احترافي للشركات في مصر: تصميم وتطوير مواقع عالية الجودة لرفع الثقة والتحويل.' : 'NAGEEB is a premium digital partner for Egyptian businesses that need stronger presence, trust, and conversion outcomes.' });
+  return buildPageMetadata({ locale, path: '', title: locale === 'ar' ? 'OBSIDIAN | تصميم وتطوير مواقع احترافية في مصر' : 'OBSIDIAN | Premium Web Design & Development in Egypt', description: locale === 'ar' ? 'OBSIDIAN شريك رقمي احترافي للشركات في مصر: تصميم وتطوير مواقع عالية الجودة لرفع الثقة والتحويل.' : 'OBSIDIAN is a premium digital partner for Egyptian businesses that need stronger presence, trust, and conversion outcomes.' });
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {

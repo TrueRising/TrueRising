@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: '/process',
-    title: locale === 'ar' ? 'آلية العمل | NAGEEB' : 'Process | NAGEEB',
+    title: locale === 'ar' ? 'آلية العمل | OBSIDIAN' : 'Process | OBSIDIAN',
     description: locale === 'ar' ? 'اكتشف آلية العمل من الفكرة حتى الإطلاق بمستوى تنفيذ احترافي.' : 'Explore our structured process from discovery to launch with premium execution.'
   });
 }

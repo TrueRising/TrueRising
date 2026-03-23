@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: '/about',
-    title: locale === 'ar' ? 'من نحن | NAGEEB' : 'About | NAGEEB',
-    description: locale === 'ar' ? 'تعرّف على معايير NAGEEB ونهج التنفيذ الاحترافي للمواقع التجارية في مصر.' : 'Learn about NAGEEB standards and execution approach for serious businesses in Egypt.'
+    title: locale === 'ar' ? 'من نحن | OBSIDIAN' : 'About | OBSIDIAN',
+    description: locale === 'ar' ? 'تعرّف على معايير OBSIDIAN ونهج التنفيذ الاحترافي للمواقع التجارية في مصر.' : 'Learn about OBSIDIAN standards and execution approach for serious businesses in Egypt.'
   });
 }
 

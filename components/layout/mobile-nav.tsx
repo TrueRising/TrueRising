@@ -17,7 +17,7 @@ export const MobileNav = ({ locale, nav }: { locale: Locale; nav: Array<{ label:
       {open && (
         <div className="fixed inset-0 z-50 bg-backgroundPrimary/95 p-6">
           <div className="mb-8 flex items-center justify-between">
-            <strong>NAGEEB</strong>
+            <strong>OBSIDIAN</strong>
             <button aria-label="Close menu" onClick={() => setOpen(false)} className="rounded-button border border-borderSubtle p-2"><X className="h-5 w-5" /></button>
           </div>
           <nav className="space-y-5">

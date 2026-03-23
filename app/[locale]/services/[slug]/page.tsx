@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: `/services/${slug}`,
-    title: `${service.title} | NAGEEB`,
+    title: `${service.title} | OBSIDIAN`,
     description: service.summary
   });
 }
@@ -31,7 +31,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ loca
     <>
       <PageEvent event="service_page_view" payload={{ locale, slug }} />
       <SectionShell><Container><h1 className="text-4xl font-semibold md:text-5xl">{service.title}</h1><p className="mt-4 max-w-3xl text-textSecondary">{service.overview}</p></Container></SectionShell>
-      <SectionShell><Container><div className="grid gap-6 md:grid-cols-3"><Card><h2 className="mb-3 font-semibold">{locale === 'ar' ? 'المشكلات التي نعالجها' : 'Problems solved'}</h2><ul className="space-y-2 text-sm text-textSecondary">{service.problems.map((x)=><li key={x}>{x}</li>)}</ul></Card><Card><h2 className="mb-3 font-semibold">{locale === 'ar' ? 'ما الذي يشمله التنفيذ' : 'Deliverables'}</h2><ul className="space-y-2 text-sm text-textSecondary">{service.deliverables.map((x)=><li key={x}>{x}</li>)}</ul></Card><Card><h2 className="mb-3 font-semibold">{locale === 'ar' ? 'لماذا NAGEEB' : 'Why NAGEEB'}</h2><ul className="space-y-2 text-sm text-textSecondary">{service.why.map((x)=><li key={x}>{x}</li>)}</ul></Card></div></Container></SectionShell>
+      <SectionShell><Container><div className="grid gap-6 md:grid-cols-3"><Card><h2 className="mb-3 font-semibold">{locale === 'ar' ? 'المشكلات التي نعالجها' : 'Problems solved'}</h2><ul className="space-y-2 text-sm text-textSecondary">{service.problems.map((x)=><li key={x}>{x}</li>)}</ul></Card><Card><h2 className="mb-3 font-semibold">{locale === 'ar' ? 'ما الذي يشمله التنفيذ' : 'Deliverables'}</h2><ul className="space-y-2 text-sm text-textSecondary">{service.deliverables.map((x)=><li key={x}>{x}</li>)}</ul></Card><Card><h2 className="mb-3 font-semibold">{locale === 'ar' ? 'لماذا OBSIDIAN' : 'Why OBSIDIAN'}</h2><ul className="space-y-2 text-sm text-textSecondary">{service.why.map((x)=><li key={x}>{x}</li>)}</ul></Card></div></Container></SectionShell>
       <SectionShell><Container><h2 className="mb-5 text-2xl font-semibold">{locale === 'ar' ? 'أعمال مرتبطة' : 'Relevant work'}</h2><div className="grid gap-4 md:grid-cols-3">{getWork(locale).slice(0,3).map((w)=><Card key={w.slug}><h3 className="font-semibold">{w.title}</h3><p className="mt-2 text-sm text-textSecondary">{w.excerpt}</p></Card>)}</div></Container></SectionShell>
       <FinalCTA locale={locale} title={locale === 'ar' ? 'جاهز للخطوة التالية؟' : 'Ready for the next step?'} body={locale === 'ar' ? 'ابدأ الآن وسنحوّل الخدمة إلى مسار تنفيذ واضح.' : 'Start now and we will turn this service into a clear execution plan.'} />
     </>

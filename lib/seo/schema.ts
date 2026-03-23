@@ -5,7 +5,7 @@ export const organizationSchema = {
   '@type': 'Organization',
   name: siteSettings.brand,
   url: siteSettings.baseUrl,
-  email: 'anageeb@gmail.com',
+  email: 'hello@obsidianagency.co',
   telephone: '+201023968999'
 };
 

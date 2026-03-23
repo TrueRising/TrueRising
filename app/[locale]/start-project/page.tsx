@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: '/start-project',
-    title: locale === 'ar' ? 'ابدأ مشروعك | NAGEEB' : 'Start Project | NAGEEB',
-    description: locale === 'ar' ? 'أرسل تفاصيل مشروعك لفريق NAGEEB لتحصل على خطة تنفيذ واضحة.' : 'Submit your project brief and receive a focused execution plan from NAGEEB.'
+    title: locale === 'ar' ? 'ابدأ مشروعك | OBSIDIAN' : 'Start Project | OBSIDIAN',
+    description: locale === 'ar' ? 'أرسل تفاصيل مشروعك لفريق OBSIDIAN لتحصل على خطة تنفيذ واضحة.' : 'Submit your project brief and receive a focused execution plan from OBSIDIAN.'
   });
 }
 

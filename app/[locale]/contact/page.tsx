@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: '/contact',
-    title: locale === 'ar' ? 'تواصل معنا | NAGEEB' : 'Contact | NAGEEB',
-    description: locale === 'ar' ? 'تواصل مباشرة مع فريق NAGEEB عبر الهاتف أو واتساب أو البريد.' : 'Reach NAGEEB directly via phone, WhatsApp, or email.'
+    title: locale === 'ar' ? 'تواصل معنا | OBSIDIAN' : 'Contact | OBSIDIAN',
+    description: locale === 'ar' ? 'تواصل مباشرة مع فريق OBSIDIAN عبر الهاتف أو واتساب أو البريد.' : 'Reach OBSIDIAN directly via phone, WhatsApp, or email.'
   });
 }
 

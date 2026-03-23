@@ -1,8 +1,8 @@
 export const siteSettings = {
-  brand: 'NAGEEB',
-  baseUrl: 'https://nageeb.vercel.app',
-  defaultOg: '/images/og-nageeb.jpg',
-  company: 'NAGEEB Web Design & Development',
+  brand: 'OBSIDIAN',
+  baseUrl: 'https://obsidian-weld-nu.vercel.app',
+  defaultOg: '/images/og-obsidian.jpg',
+  company: 'OBSIDIAN Digital Systems',
   description:
-    'Premium web design and development for Egyptian businesses seeking stronger digital presence and better conversion outcomes.'
+    'Premium digital systems and web experiences for ambitious brands seeking stronger authority, trust, and conversion outcomes.'
 };

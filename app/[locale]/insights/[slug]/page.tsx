@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: `/insights/${slug}`,
-    title: `${insight.title} | NAGEEB`,
+    title: `${insight.title} | OBSIDIAN`,
     description: insight.excerpt
   });
 }

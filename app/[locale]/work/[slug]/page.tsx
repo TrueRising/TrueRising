@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: `/work/${slug}`,
-    title: `${item.title} | NAGEEB`,
+    title: `${item.title} | OBSIDIAN`,
     description: item.excerpt
   });
 }

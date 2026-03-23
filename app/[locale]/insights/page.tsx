@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildPageMetadata({
     locale,
     path: '/insights',
-    title: locale === 'ar' ? 'المقالات والرؤى | NAGEEB' : 'Insights | NAGEEB',
+    title: locale === 'ar' ? 'المقالات والرؤى | OBSIDIAN' : 'Insights | OBSIDIAN',
     description: locale === 'ar' ? 'محتوى عملي للشركات حول تصميم وتطوير المواقع والتحسين الرقمي.' : 'Practical insights for businesses on web design, development, and digital performance.'
   });
 }

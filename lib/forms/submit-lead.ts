@@ -1,4 +1,4 @@
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'anageeb@gmail.com';
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'hello@obsidianagency.co';
 
 const sendEmail = async ({ subject, html }: { subject: string; html: string }) => {
   const apiKey = process.env.RESEND_API_KEY;
@@ -13,7 +13,7 @@ const sendEmail = async ({ subject, html }: { subject: string; html: string }) =
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      from: 'Nageeb Leads <onboarding@resend.dev>',
+      from: 'Obsidian Leads <onboarding@resend.dev>',
       to: [CONTACT_TO_EMAIL],
       subject,
       html
@@ -62,8 +62,8 @@ export const submitLead = async ({
   const emailResult = await sendEmail({
     subject:
       formType === 'contact'
-        ? `Nageeb Contact Lead (${locale.toUpperCase()})`
-        : `Nageeb Start Project Lead (${locale.toUpperCase()})`,
+        ? `Obsidian Contact Lead (${locale.toUpperCase()})`
+        : `Obsidian Start Project Lead (${locale.toUpperCase()})`,
     html: `<h2>New ${formType} submission</h2>${lines}`
   });
 

@@ -19,7 +19,7 @@ export const Header = ({ locale, nav }: { locale: Locale; nav: Array<{ label: st
   return (
     <header className={cn('sticky top-0 z-40 border-b border-transparent', solid && 'border-borderSubtle bg-backgroundPrimary/95 backdrop-blur')}>
       <div className="mx-auto flex max-w-container items-center justify-between px-5 py-4 md:px-8">
-        <Link href={`/${locale}`} className="text-sm font-semibold tracking-[0.2em]">NAGEEB</Link>
+        <Link href={`/${locale}`} className="text-sm font-semibold tracking-[0.2em]">OBSIDIAN</Link>
         <nav className="hidden items-center gap-6 md:flex">
           {nav.map((item) => <Link key={item.href} href={item.href} className="text-sm text-textSecondary hover:text-textPrimary">{item.label}</Link>)}
         </nav>

@@ -1,6 +1,6 @@
-# Nageeb Website (Next.js)
+# Obsidian Website (Next.js)
 
-Production-ready bilingual website for **Nageeb** with Arabic-first routing and executive-luxury UI.
+Production-ready bilingual website for **Obsidian** with Arabic-first routing and executive-luxury UI.
 
 ## Stack
 - Next.js App Router + TypeScript
@@ -26,7 +26,7 @@ Create `.env.local` as needed:
 ```bash
 GOOGLE_SHEETS_WEBHOOK_URL=
 RESEND_API_KEY=
-CONTACT_TO_EMAIL=anageeb@gmail.com
+CONTACT_TO_EMAIL=hello@obsidianagency.co
 ```
 
 If integrations are not configured, form submissions return an honest fallback response and the UI guides users to WhatsApp/email.

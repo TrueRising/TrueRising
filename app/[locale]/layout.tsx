@@ -11,9 +11,15 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   if (!isLocale(locale)) notFound();
   const nav = getNavigation(locale);
   return (
-    <div lang={locale} dir={getDirection(locale)} className={locale === 'ar' ? 'font-[var(--font-alexandria)]' : 'font-[var(--font-manrope)]'}>
+    <div
+      lang={locale}
+      dir={getDirection(locale)}
+      className={`relative min-h-screen overflow-hidden ${locale === 'ar' ? 'font-[var(--font-alexandria)]' : 'font-[var(--font-manrope)]'}`}
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-obsidian-glow" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-obsidian-noise opacity-30" />
       <Header locale={locale} nav={nav} />
-      <main>{children}</main>
+      <main className="relative z-10">{children}</main>
       <Footer locale={locale} />
     </div>
   );
